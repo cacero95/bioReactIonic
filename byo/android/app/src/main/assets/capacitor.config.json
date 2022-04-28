@@ -1,0 +1,6 @@
+{
+	"appId": "org.example.bio",
+	"appName": "biorith",
+	"webDir": "build",
+	"bundledWebRuntime": false
+}

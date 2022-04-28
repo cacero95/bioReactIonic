@@ -2,7 +2,7 @@ import { useState } from 'react';
 import {
   IonApp, IonContent, IonHeader, IonInput,
   IonItem, IonLabel, IonTitle, IonToolbar,
-  IonDatetime, IonModal, IonButton
+  IonDatetime, IonModal, IonButton, IonGrid, IonRow, IonCol
 } from '@ionic/react';
 import './App.css';
 import { useForm } from './Hooks/useForm';
@@ -31,6 +31,9 @@ export const App = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className = "ion-padding">
+        <IonGrid>
+        <IonRow>
+        <IonCol>
         <IonItem>
           <IonLabel position = 'floating'>Name: </IonLabel>
           <IonInput
@@ -40,14 +43,34 @@ export const App = () => {
               ({ detail }) => updateForm( detail.value, 'name' ) 
             }
           />
+          
         </IonItem>
+        </IonCol>
+        <IonCol>
         <IonItem>
-          <IonLabel
-            position = 'floating'
-            onClick = { () => openModal( true ) }
-          >
-            BirthDate: { birthDay !== '' ? formatDate( birthDay ) : '' }
-          </IonLabel>
+          <IonLabel position = 'floating'>Name: </IonLabel>
+          <IonInput
+            placeholder = 'Type your name'
+            type = 'text'
+            onIonChange = {
+              ({ detail }) => updateForm( detail.value, 'name' ) 
+            }
+          />
+          
+        </IonItem>
+        </IonCol>
+      </IonRow>
+        </IonGrid>
+        <IonItem>
+          <IonLabel position = 'floating'>Name: </IonLabel>
+          <IonInput
+            placeholder = 'Type your name'
+            type = 'text'
+            onIonChange = {
+              ({ detail }) => updateForm( detail.value, 'name' ) 
+            }
+          />
+          
         </IonItem>
         <IonItem>
           <IonLabel
